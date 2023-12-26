@@ -25,6 +25,7 @@ const UserModel = dbConnection.define("users", {
 
   role: {
     type: DataTypes.STRING,
+    allowNull: false,
   },
   city: {
     type: DataTypes.STRING,
