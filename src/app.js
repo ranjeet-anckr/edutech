@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import User from "./routes/user.routes.js";
-
+import User from "./routes/user/user.routes.js";
+import Course from "./routes/course/course.routes.js";
 var app = express();
 
 app.use(express.json());
@@ -12,6 +12,7 @@ app.get("/", function (req, res) {
   res.send("Welcome to crud app and it's running successfully!");
 });
 app.use("/api", User);
+app.use("/api", Course);
 
 app.use(function (err, req, res, next) {
   console.log(err.message);

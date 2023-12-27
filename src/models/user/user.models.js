@@ -1,5 +1,5 @@
-import { Sequelize, DataTypes } from "sequelize";
-import dbConnection from "../db/dbConnection.js";
+import { DataTypes } from "sequelize";
+import dbConnection from "../../db/dbConnection.js";
 
 const UserModel = dbConnection.define("users", {
   first_name: {
