@@ -1,28 +1,32 @@
 import { DataTypes } from "sequelize";
 import dbConnection from "../../db/dbConnection.js";
 
-const CourseModel = dbConnection.define("courseModel", {
-  course_name: {
+const CourseModel = dbConnection.define("course", {
+  courseName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
-  course_img: {
+  description: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
-  course_discount: {
+  courseImg: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  courseDiscount: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
-  course_categories: {
+  courseCategories: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
-  course_price: {
+  coursePrice: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
-  course_pdf: {
+  coursePdf: {
     type: DataTypes.STRING,
     allowNull: true,
   },
@@ -30,7 +34,7 @@ const CourseModel = dbConnection.define("courseModel", {
 
 CourseModel.sync()
   .then(() => {
-    console.log("User model synchronized successfully");
+    console.log("course model synchronized successfully");
   })
   .catch((error) => {
     console.error("Error synchronizing user model:", error);
